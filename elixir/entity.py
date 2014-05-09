@@ -13,7 +13,7 @@ import sqlalchemy
 from sqlalchemy import Table, Column, Integer, desc, ForeignKey, and_, \
                        ForeignKeyConstraint
 from sqlalchemy.orm import MapperExtension, mapper, object_session, \
-                           EXT_CONTINUE, polymorphic_union, scoped_session ScopedSession, \
+                           EXT_CONTINUE, polymorphic_union, scoped_session as ScopedSession, \
                            ColumnProperty
 from sqlalchemy.sql import ColumnCollection
 
