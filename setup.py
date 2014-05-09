@@ -1,12 +1,18 @@
 from setuptools import setup, find_packages
 import sys
+import re
+import os
 
 extra = {}
 if sys.version_info >= (3,):
     extra['use_2to3'] = True
 
+# reading cherryblog.py version without importing any modules from that package
+with open(os.path.join(os.path.dirname(__file__), 'elixir', '__init__.py')) as v_file:
+    package_version = re.compile(r".*__version__ = '(.*?)'", re.S).match(v_file.read()).group(1)
+
 setup(name="Elixir",
-      version="0.8.0",
+      version=package_version,
       description="Declarative Mapper for SQLAlchemy",
       long_description="""
 Elixir
